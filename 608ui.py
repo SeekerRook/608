@@ -40,7 +40,6 @@ def render(DISPLAY):
 	global y 
 	
 
-	print (Mess)
 	for j in range(0,X+1):
 		for i in range(0,X+1):
 			if (i == x and j == y ):
@@ -64,24 +63,17 @@ def main():
 	while True:
 		for event in pg.event.get():
 				if event.type == pg.QUIT:
-					print("bye")
 					pg.quit()
 				if event.type == pg.MOUSEBUTTONUP:	
 					onclick()
-					print(Mess)
 					render(DISPLAY)
 					pg.display.update()
 					global flag
 				if flag:
-					flag = False					
-					print("sleep")
-					sleep (1)
-					print("slept")
-					
+					flag = False
+					sleep (1)					
 					reset(DISPLAY)
-					print("reset")
 					render(DISPLAY)
-					print ("rendered")
 				pg.display.update()
 				
 
@@ -89,7 +81,6 @@ def onclick():
 	xi,yi= pg.mouse.get_pos()
 	i1 = int((xi-5)/size*X)
 	i2 = int((yi-10-logo)/size*Y)
-	print (i1 , " ", i2)
 	if i1 == x and i2 == y:
 		global Mess,flag
 		Mess = "YEAH !!!! "
