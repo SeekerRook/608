@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import random
 import pygame as pg
 from time import sleep
